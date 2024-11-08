@@ -1,0 +1,15 @@
+.ddddddd{
+    height: 90vh;
+    background-image: url(../img/Frame\ 1000001144.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.jjjjj{
+    height: 90vh;
+    background-image: url(../img/Illustration.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: 200px;
+}

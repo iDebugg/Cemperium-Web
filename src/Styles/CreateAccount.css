@@ -1,0 +1,164 @@
+
+.createAccount{
+    height: 100vh;
+    background-image: url(../img/Patterns.svg),
+    linear-gradient(to right, #519ACE, #608AC9);
+}
+.cemperiumlogo-signup button{
+    color: #519ACE;
+    background: #ffff;
+    border-radius: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: montserrat;
+}
+.createAcctWord h2{
+    color: #ffff;
+    font-family: poppins;
+    font-weight: 500;
+}
+.create-an-account{
+    background: #ffff;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: auto;
+}
+.create-an-account h1{
+color: #519ACE;
+}
+.firstNameInput,
+.lastNameInput,
+.emailAndPassInput
+{
+    height: 40px;
+    border: 1px solid #B0B1B2;
+    border-radius: 8px;
+    outline: #B0B1B2;
+}
+
+
+
+
+
+.password-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 2px 8px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    padding: 0 14px;
+  }
+  
+  .lock-icon, .eye-icon {
+    font-size: 1.2em;
+  }
+  
+  .password-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 1em;
+  }
+  
+  .password-container:hover .icon-container {
+    color: #333; /* Slightly darken icons on hover */
+  }
+  .agreenmentText span{
+    color: #B0B1B2;
+  }
+  .forgotPasswordText{
+    font-weight: 300;
+    color: #B0B1B2;
+  }
+
+
+  .toggle-switch input {
+    display: none;
+  }
+  
+  /* Slider */
+  .slider {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background-color: #FFFFFF;
+    border-radius: 34px;
+    transition: .4s;
+    border: 2px solid #B0B1B2;
+  }
+  
+  /* Round slider */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  /* Slider handle */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 3px;
+    background-color: #B0B1B2;
+    border-radius: 50%;
+    transition: .4s;
+    
+  }
+  
+  
+  /* Move slider to right when checked */
+  input:checked + .slider:before {
+    transform: translateX(18px); /* Adjust this value based on the width of the toggle switch */
+  }
+  .toggleSwitchDiv{
+    display: flex;
+    gap: 10px;
+  }
+
+
+
+  .loading-spinner {
+    border: 4px solid rgb(252, 248, 248);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin: auto;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+ 
+  
+  /* For responsive design */
+  @media (max-width: 768px) {
+    .password-container {
+      padding: 3px 3px;
+    }
+  
+    .lock-icon, .eye-icon {
+      font-size: 1em;
+    }
+  }
+  
