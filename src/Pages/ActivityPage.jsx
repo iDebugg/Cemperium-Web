@@ -7,6 +7,7 @@ import SolanaPriceChart from "../Components/SolanaPriceChart";
 import EthPriceChart from "../Components/EthPriceChart";
 import BitcoinChart from "../Components/BitcoinChart";
 import CryptocurrenciesList from "../Components/CryptocurrenciesList";
+import CryptoAssets from '../Components/CryptoAssets';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -14,27 +15,26 @@ import {
   faBars,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
-import WalletBalance from "../Components/WalletBalance";
-import CryptoAssets from "../Components/CryptoAssets";
+import TransactionHistoryMobile from '../Components/TransactionHistoryMobile';
+import TransactionHistory from '../Components/TransactionHistory';
+import CustomCalendar from '../Components/CustomCalendar';
+import TransactionFilter from '../Components/TransactionFilter';
 
-const HomePage = () => {
+const ActivityPage = () => {
   const [loading, setLoading] = useState(false);
+  const [selectedType, setSelectedType] = useState('All'); 
+  const [selectedStatus, setSelectedStatus] = useState('All'); 
   const location = useLocation();
   const navigate = useNavigate();
 
 
-
+  
   return (
     <>
       <Navbar />
       <div className="text-center p-2 display: grid block sm:block md:hidden">
-        <div className="display: flex justify-between  mb-4">
-          <BnbPriceChart />
-          <SolanaPriceChart />
-          <EthPriceChart />
-        </div>
-        <BitcoinChart />
-        <CryptocurrenciesList handleIsLoading={(isloading)=>setLoading(isloading)} />
+       <TransactionHistoryMobile />
+        
       </div>
       <main className="pt-1 md:ml-64 hidden sm:hidden md:block">
         {/* Your main content goes here */}
@@ -56,31 +56,29 @@ const HomePage = () => {
               </button>
             </div>
           </div>
-          <div className="display: flex gap-8">
-            <div className="display: grid w-9/12">
-              <div className="display: flex gap-4">
-                <BnbPriceChart />
-                <SolanaPriceChart />
-                <EthPriceChart />
-              </div>
-              <BitcoinChart />
-              <CryptocurrenciesList
-                handleIsLoading={(isloading) => setLoading(isloading)}
-              />
+          <div className="display: flex gap-4">
+            <div className="w-9/12">
+             <TransactionHistory />
             </div>
             <div className="display: grid gap-4">
               <div>
-                <WalletBalance />
-                <CryptoAssets />
+                <CustomCalendar />
+                <TransactionFilter 
+                selectedType={selectedType}
+                setSelectedType={setSelectedType}
+                selectedStatus={selectedStatus}
+                setSelectedStatus={setSelectedStatus}
+                />
               </div>
             </div>
           </div>
           {/* <p>This is where your main content goes.</p> */}
           {/* Add more content here as needed */}
         </div>
+        
       </main>
     </>
   );
 };
 
-export default HomePage;
+export default ActivityPage;

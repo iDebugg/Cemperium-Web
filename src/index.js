@@ -10,6 +10,8 @@ import { store } from "../src/Controller/store";
 import PrivateRoute from "../src/Components/PrivateRoute";
 import Loader from "./Components/Loader";
 import HomePage from "./Pages/HomePage";
+import ActivityPage from "./Pages/ActivityPage";
+import WalletPage from "./Pages/WalletPage";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
   {
     path: "Home",
     element: <HomePage />,
+  },
+  {
+    path: "Activity",
+    element: <ActivityPage />,
+  },
+  {
+    path: "Wallet",
+    element: <WalletPage />,
   },
   
 ]);

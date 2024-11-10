@@ -1,0 +1,64 @@
+.calendar-container {
+    font-family: poppins;
+    
+    
+  }
+  
+  .calendar-title {
+    color: #519ACE;
+    font-family: poppins;
+  }
+  
+  .nav-button {
+    background-color: #6d9ad1;
+    border: none;
+  }
+  
+  .nav-button:hover {
+    background-color: #6fa5e7;
+  }
+  
+ 
+  
+  .calendar-day-name,
+  .calendar-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    margin: 3px;
+    border-radius: 40%;
+  }
+  
+  .calendar-day-name {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .calendar-day {
+    cursor: pointer;
+    color: rgb(121, 121, 121);
+  }
+  
+  .calendar-day.today {
+    background-color: #6d9ad1;
+    color: white;
+  }
+  
+  .calendar-day.selected {
+    background-color: #e0ecf8;
+    color: black;
+  }
+  
+  .calendar-day.past {
+    background-color: #bad3f1;
+    color: #3A4856;
+  }
+  
+  .calendar-day:hover {
+    background-color: #ddd;
+  }
+  
+  .empty {
+    visibility: hidden;
+  }

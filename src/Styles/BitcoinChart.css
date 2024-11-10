@@ -1,0 +1,85 @@
+.chart-container {
+    background-color: #ffff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+   
+  }
+  
+  .chart-title {
+    color: #696969;
+  
+  
+  }
+  .chart-title span {
+    color: #9A9A9A;
+  
+  
+  }
+
+  
+  .current-price {
+    text-align: left;
+    font-family: montserrat;
+    /* font-weight: 700; */
+    color: #519ACE;
+  }
+  .marketOverviewText{
+    font-family: montserrat;
+    font-weight: 600;
+    color: #9A9A9A;
+  }
+  
+  .time-frame-selector {
+    margin-top: 10px;
+ 
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #dfdede;
+    border-radius: 10px;
+    padding: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .time-frame-button {
+    font-family: poppins;
+    font-weight: 600;
+    padding: 3px 3px;
+    margin: 0 5px;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    color: #727272;
+  }
+  
+  
+  .time-frame-button.active {
+    background-color: #fff;
+    color: #888;
+  }
+  
+  .recharts-cartesian-axis-tick-value {
+    font-size: 12px;
+  }
+  
+  .recharts-tooltip-wrapper {
+    font-size: 14px;
+  }
+  .bitcoingImg{
+    width: 30px;
+    height: 30px;
+  }
+.marketOverviewAndFrameSelector{
+  display: flex;
+  
+}
+/* .bitcoinImgDspMobile{
+  display: none;
+} */
+.bitcoinImgDspLarge{
+  display: flex;
+}

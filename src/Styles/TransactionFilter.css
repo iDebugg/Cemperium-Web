@@ -1,0 +1,26 @@
+  .filters h5 {
+    color: #9A9A9A;
+    font-family: montserrat;
+  }
+  .filters h4 {
+      color: #3A4856;
+      font-family: montserrat;
+    }
+  
+  .filter-group button {
+    font-family: montserrat;
+    border: 1px solid #BDBDBD;
+    color: #9A9A9A;
+    transition: background-color 0.3s;
+  }
+  
+  .filter-group button.active {
+    background-color: #85AAD7;
+    color: #ffff;
+    border: none;
+  }
+  
+  .filter-group button:hover {
+    background-color: #85AAD7;
+    color: white;
+  }

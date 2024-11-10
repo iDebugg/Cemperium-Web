@@ -1,0 +1,32 @@
+.filter-group-mobile button {
+    margin: 5px 10px 5px 0;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px solid #d3d4d7;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #9A9A9A;
+    font-size: 12px;
+    font-family: montserrat;
+    font-weight: 600;
+  }
+  
+  .filter-group-mobile button.active-mobile {
+    background-color: #d3d4d7;
+  }
+  .status-indicator-mobile.successful-mobile {
+    background-color: #28a745;
+  }
+  
+  .status-indicator-mobile.failed-mobile {
+    background-color: #dc3545;
+  }
+  
+  .status-indicator-mobile.processing-mobile {
+    background-color: #6c757d;
+  }
+  .filter-button-mobile {
+    background-color: #ffff;
+    border:  1px solid #9A9A9A ;
+    display: inline-flex;
+  }
