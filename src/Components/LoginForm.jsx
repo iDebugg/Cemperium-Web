@@ -30,7 +30,7 @@ const LoginForm = () => {
   
       try {
         const response = await axios.post(
-          "https://api.cemperium.com/api/v1/auth/login",
+          `${process.env.REACT_APP_LOGIN_API_URL}`,
           userData
         );
         if (response.status === 200) {

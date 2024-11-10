@@ -49,7 +49,7 @@ const SignupForm = () => {
   
       try {
         const res = await axios.post(
-  "https://api.cemperium.com/api/v1/auth/signup",
+ `${process.env.REACT_APP_SIGNUP_API_URL}`,
   userData
 );
         console.log("====== response ======");
