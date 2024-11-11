@@ -8,7 +8,7 @@ const Login = () => {
   return (
     <div className="createAccount pr-4 pl-4 pt-4">
       <div className="cemperiumlogo-signup display: flex justify-between">
-        <img src={CemperiumLogo} alt="" />
+        <img src={CemperiumLogo} alt="" className="w-40" />
         <button className="text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl p-2 sm:p-2 md:p-2 lg:p-2 xl:p-2">
           <Link to="/">Create account</Link>
         </button>

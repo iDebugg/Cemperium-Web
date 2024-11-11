@@ -28,19 +28,19 @@ const router = createBrowserRouter([
   },
   {
     path: "Home",
-    element: <HomePage />,
+    element: <PrivateRoute element={HomePage} />,
   },
   {
     path: "Activity",
-    element: <ActivityPage />,
+    element: <PrivateRoute element={ActivityPage} />,
   },
   {
     path: "Wallet",
-    element: <WalletPage />,
+    element: <PrivateRoute element={WalletPage} />,
   },
   {
     path: "Cryptocurrency",
-    element: <CryptoCurrencyPage />,
+    element: <PrivateRoute element={CryptoCurrencyPage} />,
   },
   
 ]);
