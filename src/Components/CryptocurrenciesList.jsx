@@ -113,11 +113,11 @@ const CryptocurrenciesTable = ({ handleIsLoading }) => {
   }
 
   return (
-    <div className="w-full overflow-x-auto">
+    <div className="w-full overflow-x-auto h-[calc(40vh-110px)] flex flex-col">
       <h4 className="text-left text-lg font-semibold mt-4 mb-2">Cryptocurrencies</h4>
       <table className="w-full border-collapse">
-        <thead>
-          <tr>
+        <thead className="sticky top-0">
+          <tr className="bg-gray-100 text-gray-600 uppercase text-xs leading-normal">
             <th className="py-2 px-4 font-medium text-left text-slate-400">Coin</th>
             <th className="py-2 px-4 font-medium text-left text-slate-400">Price</th>
             <th className="py-2 px-4 font-medium text-left text-slate-400">24h</th>

@@ -7,7 +7,7 @@ import { updateCoinList } from "../Controller/assetscontroller";
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-const CryptoAssets = () => {
+const CryptoAssetsWallet = () => {
   const data = useSelector((state) => state.cryptoAssetsController.coinList);
   const [assetData, setAssetListData] = useState(data);
   const [filteredAssetData, setFilteredAssetData] = useState(data);
@@ -69,7 +69,7 @@ const CryptoAssets = () => {
   };
 
   return (
-    <div id="data-containerAssets" className="bg-white drop-shadow-lg p-4  h-[calc(70vh-110px)] flex flex-col">
+    <div id="data-containerAssets" className="bg-white drop-shadow-lg p-4 rounded-xl h-[calc(55vh-100px)] flex flex-col">
       <div className='flex justify-between items-center mb-4'>
         <span className="text-lg font-semibold">Assets</span>
         {searchVisible ? (
@@ -93,7 +93,7 @@ const CryptoAssets = () => {
         )}
       </div>
 
-      <div className="scroll-content overflow-auto">
+      <div className="scroll-content overflow-auto ">
         {loading ? (
           <div>
             {Array.from({ length: 8 }).map((_, index) => (
@@ -119,10 +119,11 @@ const CryptoAssets = () => {
                   <div className="text-gray-500 text-sm">{truncateName(coin.assetName)}</div>
                 </div>
               </div>
-              <div className="text-right">
-                <div className="text-slate-600 font-semibold">{calculateBalance(coin.assetMarketPrice, coin.assetBalance)}</div>
-                <div className=" text-slate-600 text-gray-500 text-sm">{formatBalance(coin.assetBalance)}</div>
-              </div>
+            
+              <div className=" text-slate-600 text-gray-500 text-sm text-left">{formatBalance(coin.assetBalance)}</div>
+              
+                <div className="text-slate-600 font-semibold text-right">{calculateBalance(coin.assetMarketPrice, coin.assetBalance)}</div>
+              
             </div>
           ))
         )}
@@ -131,4 +132,4 @@ const CryptoAssets = () => {
   );
 }
 
-export default CryptoAssets;
+export default CryptoAssetsWallet;

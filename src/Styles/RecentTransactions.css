@@ -1,0 +1,58 @@
+.recent-transactions {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recent-transactions h2 {
+    font-family: Montserrat;
+  }
+  
+ 
+
+.scroll-contnt::-webkit-scrollbar {
+    display: block;
+}
+
+.scroll-contnt {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: 10px;  /* Firefox */
+}
+  
+  .filter-button {    
+    border: 1px solid #ccc;
+  }
+  
+  .filter-button.active {
+    background-color: #c8c8c8;
+    font-family: Montserrat;
+   
+  }
+  
+  .filter-dropdown {
+    border: 1px solid #ccc;
+    background-color: #ffff;
+    font-family: Montserrat;
+  }
+  .filter-dropdown:focus{
+    outline: none;
+  }
+  
+  
+  .transaction-item {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .transaction-item:last-child {
+    border-bottom: none;
+  }
+  
+  .transaction-date{
+    font-family: poppins;
+    color: #3A4856;
+  }
+  .transaction-type,
+  .transaction-amount{
+    font-family: poppins;
+   
+    color: #3A4856;
+
+  }

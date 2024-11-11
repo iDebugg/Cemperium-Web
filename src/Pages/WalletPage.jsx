@@ -22,6 +22,9 @@ import TransactionHistory from '../Components/TransactionHistory';
 import CustomCalendar from '../Components/CustomCalendar';
 import TransactionFilter from '../Components/TransactionFilter';
 import WalletBalance from '../Components/WalletBalance';
+import RecentTransactions from '../Components/RecentTransactions';
+import CryptoAssetsWallet from '../Components/CryptoAssetsWallet';
+import DashboardWalletBalance from '../Components/DashboardWalletBalance';
 
 const WalletPage = () => {
   const [loading, setLoading] = useState(false);
@@ -40,7 +43,7 @@ const WalletPage = () => {
        <CryptoAssets />
         
       </div>
-      <main className="pt-1 md:ml-64 hidden sm:hidden md:block">
+      <main className="pt-1 md:ml-64 hidden sm:hidden md:block bg-red-500">
         {/* Your main content goes here */}
         <div className="p-2">
           {/* <h1 className="text-3xl font-bold">Main Content</h1> */}
@@ -62,11 +65,12 @@ const WalletPage = () => {
           </div>
           <div className="display: flex gap-4">
             <div className="w-9/12">
-             <TransactionHistory />
+            <DashboardWalletBalance />
+             <CryptoAssetsWallet />
             </div>
-            <div className="display: grid gap-4">
+            <div className="w-3/12">
               <div>
-                
+                <RecentTransactions />
               </div>
             </div>
           </div>

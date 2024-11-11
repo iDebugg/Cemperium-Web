@@ -60,7 +60,7 @@ const WalletBalance = () => {
             navigator.clipboard.writeText(ethAddress).then(() => {
                 console.log('Text copied to clipboard');
                 setCopied(true);
-                setTimeout(() => setCopied(false), 2000); // Hide the message after 2 seconds
+                setTimeout(() => setCopied(false), 1000);
             }).catch(err => {
                 console.error('Failed to copy text to clipboard: ', err);
             });
