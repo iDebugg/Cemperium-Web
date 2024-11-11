@@ -23,7 +23,6 @@ const CryptoAssets = () => {
     setAssetListData(data);
     setLoading(true);
 
-    // Simulate API fetch here if needed, or set `loading` to false if data is already fetched
     setTimeout(() => setLoading(false), 1000);
   }, [data]);
 

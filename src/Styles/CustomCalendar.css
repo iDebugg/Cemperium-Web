@@ -1,14 +1,11 @@
 .calendar-container {
     font-family: poppins;
-    
-    
   }
   
   .calendar-title {
     color: #519ACE;
     font-family: poppins;
   }
-  
   .nav-button {
     background-color: #6d9ad1;
     border: none;
@@ -17,9 +14,6 @@
   .nav-button:hover {
     background-color: #6fa5e7;
   }
-  
- 
-  
   .calendar-day-name,
   .calendar-day {
     display: flex;

@@ -1,4 +1,3 @@
-// assetscontroller.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialAssetsState = {
@@ -7,17 +6,17 @@ const initialAssetsState = {
   ethWalletAddress: [],
   bitcoinData: [],
   currentBitcoinPrice: null,
-  timeFrame: 'year', // default time frame
-  bnbPrice: 0, // BNB price state
-  bnbPriceChange: 0, // BNB price change state
-  bnbChartData: {  // BNB chart data state
+  timeFrame: "year",
+  bnbPrice: 0,
+  bnbPriceChange: 0,
+  bnbChartData: {
     labels: [],
     datasets: [
       {
-        label: 'Price',
+        label: "Price",
         data: [],
-        borderColor: '#FFFFFF',
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        borderColor: "#FFFFFF",
+        backgroundColor: "rgba(255, 255, 255, 0.2)",
         borderWidth: 2,
         tension: 0.4,
         fill: false,
@@ -25,16 +24,16 @@ const initialAssetsState = {
       },
     ],
   },
-  ethPrice: 0, // ETH price state
-  ethPriceChange: 0, // ETH price change state
-  ethChartData: {  // ETH chart data state
+  ethPrice: 0,
+  ethPriceChange: 0,
+  ethChartData: {
     labels: [],
     datasets: [
       {
-        label: 'Price',
+        label: "Price",
         data: [],
-        borderColor: '#FFFFFF',
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        borderColor: "#FFFFFF",
+        backgroundColor: "rgba(255, 255, 255, 0.2)",
         borderWidth: 2,
         tension: 0.4,
         fill: false,
@@ -42,16 +41,16 @@ const initialAssetsState = {
       },
     ],
   },
-  solPrice: 0, // SOL price state
-  solPriceChange: 0, // SOL price change state
-  solChartData: {  // SOL chart data state
+  solPrice: 0,
+  solPriceChange: 0,
+  solChartData: {
     labels: [],
     datasets: [
       {
-        label: 'Price',
+        label: "Price",
         data: [],
-        borderColor: '#FFFFFF',
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        borderColor: "#FFFFFF",
+        backgroundColor: "rgba(255, 255, 255, 0.2)",
         borderWidth: 2,
         tension: 0.4,
         fill: false,
@@ -127,7 +126,7 @@ export const {
   updateEthPrice,
   updateEthPriceChange,
   updateEthChartData,
-  updateSolPrice,  // Exporting new actions for SOL
+  updateSolPrice,
   updateSolPriceChange,
   updateSolChartData,
 } = createAssetsSlice.actions;

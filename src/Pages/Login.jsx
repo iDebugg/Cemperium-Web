@@ -1,9 +1,7 @@
 import React from "react";
 import "../Styles/CreateAccount.css";
 import CemperiumLogo from "../img/Logo.svg";
-import SignupForm from "../Components/SignupForm";
 import LoginForm from "../Components/LoginForm";
-import Illustrartion from "../img/Illustration.png";
 import { Link } from "react-router-dom";
 
 const Login = () => {

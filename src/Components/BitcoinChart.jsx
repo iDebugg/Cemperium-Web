@@ -1,4 +1,3 @@
-// src/BitcoinChart.js
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -36,7 +35,7 @@ const formatXAxisDate = (date) => {
   return new Date(date).toLocaleString("default", { month: "short" });
 };
 
-const formatTooltipDate = (date) => new Date(date).toISOString(); // Use ISO string format
+const formatTooltipDate = (date) => new Date(date).toISOString(); 
 
 const BitcoinChart = () => {
   const dispatch = useDispatch();
@@ -82,7 +81,6 @@ const BitcoinChart = () => {
         <img src={bitcoinImg} alt="" className="bitcoingImg" />
         <h1 className="chart-title text-lg sm:text-lg md:text-lg lg:text-xl xl:text-xl font-semibold">BTC <span className="text-sm sm:text-sm md:text-sm lg:text-lg xl:text-lg">Bitcoin Price</span></h1>
       </div>
-        {/* <h6 className="marketOverviewText">Market Overview</h6> */}
         <div className="time-frame-selector">
           {Object.keys(timeFrames).map((key) => (
             <button
@@ -95,10 +93,6 @@ const BitcoinChart = () => {
           ))}
         </div>
       </div>
-      {/* <div className="bitcoinImgDspLarge">
-        <img src={bitcoinImg} alt="" className="bitcoingImg" />
-        <h1 className="chart-title">Bitcoin Price (BTC)</h1>
-      </div> */}
 
       {currentPrice !== null && (
         <h2 className="current-price text-2xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold"> ${currentPrice.toLocaleString()}</h2>
@@ -112,7 +106,7 @@ const BitcoinChart = () => {
               <stop offset="100%" stopColor="#66a6ff" stopOpacity={0} />
             </linearGradient>
           </defs>
-          <CartesianGrid vertical={false} horizontal={false} /> {/* Hide grid lines */}
+          <CartesianGrid vertical={false} horizontal={false} /> 
           <XAxis dataKey="formattedDate" />
           <YAxis tickFormatter={formatPrice} />
           <Tooltip content={<CustomTooltip />} />

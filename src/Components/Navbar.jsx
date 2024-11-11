@@ -9,16 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import NavLogo from "../img/Navlogo.svg";
 import DropdownLogo from "../img/Dropdownlogo.svg";
-import CemperiumLogo from "../img/Logo.svg";
 import "../Styles/Navbar.css";
-import BnbPriceChart from "./BnbPriceChart";
-import SearchBar from "./SearchBar";
-import SolanaPriceChart from "./SolanaPriceChart";
-import EthPriceChart from "./EthPriceChart";
-import BitcoinChart from "./BitcoinChart";
-import CryptocurrenciesList from "../Components/CryptocurrenciesList";
-import WalletBalance from "./WalletBalance";
-import CryptoAssets from "./CryptoAssets";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
@@ -42,14 +33,11 @@ const Navbar = () => {
 
   return (
     <div className="relative">
-      {/* Small Screen Navbar (Visible only on small screens) */}
       <div className="flex items-center bg-white shadow-md p-4 rounded-full space-x-4 md:hidden">
-        {/* Logo */}
         <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100">
           <img src={NavLogo} alt="Logo" className="w-8 h-8" />
         </div>
 
-        {/* Search Bar */}
         <div className="flex items-center bg-gray-100 rounded-lg px-4 py-2 flex-1 max-w-md">
           <FontAwesomeIcon icon={faSearch} className="text-gray-400 mr-2" />
           <input
@@ -62,13 +50,11 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Hamburger Menu */}
         <button onClick={toggleDropdown} className="ml-auto">
           <FontAwesomeIcon icon={faBars} className="text-gray-500 text-xl" />
         </button>
       </div>
 
-      {/* Sidebar for Medium and Large Screens (Visible only on md and larger screens) */}
       <div className="navvdrropdwn hidden md:flex flex-col bg-blue-500 w-64 h-screen p-4 text-white fixed top-0 left-0">
         <div className="flex items-center mb-8">
           <img src={DropdownLogo} alt="Cemperium Logo" className="mb-20" />
@@ -83,12 +69,14 @@ const Navbar = () => {
                 : "text-white"
             }`}
           >
-            <span className="ml-2 text-2xl">Hooime</span>
+            <span className="ml-2 text-2xl">Home</span>
           </Link>
           <Link
             to="/Activity"
             className={`flex items-center p-2 mb-4 ${
-              isActive("/Activity") ? "bg-white text-blue-500 rounded-xl" : "text-white"
+              isActive("/Activity")
+                ? "bg-white text-blue-500 rounded-xl"
+                : "text-white"
             }`}
           >
             <span className="ml-2 text-2xl">Activity</span>
@@ -96,23 +84,28 @@ const Navbar = () => {
           <Link
             to="/Wallet"
             className={`flex items-center p-2 mb-4 ${
-              isActive("/Wallet") ? "bg-white text-blue-500 rounded-xl" : "text-white"
+              isActive("/Wallet")
+                ? "bg-white text-blue-500 rounded-xl"
+                : "text-white"
             }`}
           >
             <span className="ml-2 text-2xl">Wallet</span>
           </Link>
-          <a
-            href="#cryptocurrency"
-            className="flex items-center p-2 mb-4 text-white"
+          <Link
+            to="/Cryptocurrency"
+            className={`flex items-center p-2 mb-4 ${
+              isActive("/Cryptocurrency")
+                ? "bg-white text-blue-500 rounded-xl"
+                : "text-white"
+            }`}
           >
             <span className="ml-2 text-2xl">Cryptocurrency</span>
-          </a>
+          </Link>
           <a href="#settings" className="flex items-center p-2 text-white">
             <span className="ml-2 text-2xl">Settings</span>
           </a>
         </nav>
 
-        {/* Logout Button */}
         <div>
           <Link onClick={handleLogout}>
             <a href="#logout" className="flex items-center p-2 text-white">
@@ -122,7 +115,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Fullscreen Sliding Dropdown for Small Screens */}
       {isOpen && (
         <>
           <div
@@ -143,7 +135,9 @@ const Navbar = () => {
               <Link
                 to="/Home"
                 className={`flex items-center p-2 mb-4 ${
-                  isActive("/Home") ? "bg-white text-blue-500 rounded-xl" : "text-white"
+                  isActive("/Home")
+                    ? "bg-white text-blue-500 rounded-xl"
+                    : "text-white"
                 }`}
               >
                 <span className="text-2xl">Home</span>
@@ -168,12 +162,16 @@ const Navbar = () => {
               >
                 <span className="text-2xl">Wallet</span>
               </Link>
-              <a
-                href="#cryptocurrency"
-                className="text-slate-100 text-2xl hover:text-blue-500 hover:bg-white hover:p-2 hover:rounded-xl"
+              <Link
+                to="/Cryptocurrency"
+                className={`flex items-center p-2 mb-4 ${
+                  isActive("/Cryptocurrency")
+                    ? "bg-white text-blue-500 rounded-xl"
+                    : "text-white"
+                }`}
               >
-                Cryptocurrency
-              </a>
+                <span className="text-2xl">Cryptocurrency</span>
+              </Link>
               <a
                 href="#settings"
                 className="text-slate-100 text-2xl hover:text-blue-500 hover:bg-white hover:p-2 hover:rounded-xl"
@@ -192,14 +190,12 @@ const Navbar = () => {
             </nav>
           </div>
 
-          {/* Overlay to close the dropdown */}
           <div
             onClick={toggleDropdown}
             className="fixed inset-0 bg-black opacity-50 z-40"
           ></div>
         </>
       )}
-      
     </div>
   );
 };

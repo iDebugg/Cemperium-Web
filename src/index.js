@@ -1,4 +1,3 @@
-// src/index.js
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -12,6 +11,7 @@ import Loader from "./Components/Loader";
 import HomePage from "./Pages/HomePage";
 import ActivityPage from "./Pages/ActivityPage";
 import WalletPage from "./Pages/WalletPage";
+import CryptoCurrencyPage from './Pages/CryptoCurrencyPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -37,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "Wallet",
     element: <WalletPage />,
+  },
+  {
+    path: "Cryptocurrency",
+    element: <CryptoCurrencyPage />,
   },
   
 ]);

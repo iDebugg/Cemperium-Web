@@ -32,7 +32,10 @@ const CryptocurrenciesTable = ({ handleIsLoading }) => {
         setLoading(true);
 
         try {
-          const response = await axios.get(`${process.env.REACT_APP_CRYPTOASSETS_API_URL}`, config);
+          const response = await axios.get(
+            `${process.env.REACT_APP_CRYPTOASSETS_API_URL}`,
+            config
+          );
           dispatch(updateCoinList(response.data.myCoins));
         } catch (error) {
           console.error("Error fetching data:", error);
@@ -58,20 +61,33 @@ const CryptocurrenciesTable = ({ handleIsLoading }) => {
     return value >= 0 ? `▲ ${value}%` : `▼ ${Math.abs(value)}%`;
   };
 
-  const truncateName = (name) => (name.length > 5 ? name.slice(0, 5) + ".." : name);
+  const truncateName = (name) =>
+    name.length > 5 ? name.slice(0, 5) + ".." : name;
 
   if (loading) {
     return (
       <div className="w-full overflow-x-auto p-4">
-        <h4 className="text-left text-lg font-semibold mt-4 mb-2">Cryptocurrencies</h4>
+        <h4 className="text-left text-lg font-semibold mt-4 mb-2">
+          Cryptocurrencies
+        </h4>
         <table className="w-full border-collapse">
           <thead>
             <tr>
-              <th className="py-2 px-4 font-medium text-left text-slate-400">Coin</th>
-              <th className="py-2 px-4 font-medium text-left text-slate-400">Price</th>
-              <th className="py-2 px-4 font-medium text-left text-slate-400">24h</th>
-              <th className="py-2 px-4 font-medium text-left hidden md:table-cell text-slate-400">Market Cap</th>
-              <th className="py-2 px-4 font-medium text-left text-slate-400">Buy</th>
+              <th className="py-2 px-4 font-medium text-left text-slate-400">
+                Coin
+              </th>
+              <th className="py-2 px-4 font-medium text-left text-slate-400">
+                Price
+              </th>
+              <th className="py-2 px-4 font-medium text-left text-slate-400">
+                24h
+              </th>
+              <th className="py-2 px-4 font-medium text-left hidden md:table-cell text-slate-400">
+                Market Cap
+              </th>
+              <th className="py-2 px-4 font-medium text-left text-slate-400">
+                Buy
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -113,37 +129,63 @@ const CryptocurrenciesTable = ({ handleIsLoading }) => {
   }
 
   return (
-    <div className="w-full overflow-x-auto h-[calc(40vh-110px)] flex flex-col">
-      <h4 className="text-left text-lg font-semibold mt-4 mb-2">Cryptocurrencies</h4>
+    <div className="w-full overflow-x-auto h-[calc(50vh-100px)] flex flex-col">
+      <h4 className="text-left text-lg font-semibold mt-4 mb-2">
+        Cryptocurrencies
+      </h4>
       <table className="w-full border-collapse">
         <thead className="sticky top-0">
           <tr className="bg-gray-100 text-gray-600 uppercase text-xs leading-normal">
-            <th className="py-2 px-4 font-medium text-left text-slate-400">Coin</th>
-            <th className="py-2 px-4 font-medium text-left text-slate-400">Price</th>
-            <th className="py-2 px-4 font-medium text-left text-slate-400">24h</th>
-            <th className="py-2 px-4 font-medium text-left hidden md:table-cell text-slate-400">Market Cap</th>
-            <th className="py-2 px-4 font-medium text-left text-slate-400">Buy</th>
+            <th className="py-2 px-4 font-medium text-left text-slate-400">
+              Coin
+            </th>
+            <th className="py-2 px-4 font-medium text-left text-slate-400">
+              Price
+            </th>
+            <th className="py-2 px-4 font-medium text-left text-slate-400">
+              24h
+            </th>
+            <th className="py-2 px-4 font-medium text-left hidden md:table-cell text-slate-400">
+              Market Cap
+            </th>
+            <th className="py-2 px-4 font-medium text-left text-slate-400">
+              Buy
+            </th>
           </tr>
         </thead>
         <tbody>
           {data.map((coin) => (
             <tr key={coin.assetSymbol} className="border-b last:border-b-0">
               <td className="py-2 px-2 flex items-center space-x-2">
-                <img src={coin.assetImage} alt={coin.assetName} className="w-8 h-8" />
+                <img
+                  src={coin.assetImage}
+                  alt={coin.assetName}
+                  className="w-8 h-8"
+                />
                 <div>
-                  <div className="text-slate-600 font-medium text-left">{truncateName(coin.assetName)}</div>
-                  <div className="text-gray-500 text-sm text-left hidden">{coin.assetSymbol}</div>
+                  <div className="text-slate-600 font-medium text-left">
+                    {truncateName(coin.assetName)}
+                  </div>
+                  <div className="text-gray-500 text-sm text-left hidden">
+                    {coin.assetSymbol}
+                  </div>
                 </div>
               </td>
-              <td className="text-slate-600 py-1 px-1 text-center">${formatPrice(coin.assetMarketPrice)}</td>
+              <td className="text-slate-600 py-1 px-1 text-center">
+                ${formatPrice(coin.assetMarketPrice)}
+              </td>
               <td
                 className={`py-2 px-2 ${
-                  parseFloat(coin.assetPercentChange24h) >= 0 ? "text-green-500" : "text-red-500"
+                  parseFloat(coin.assetPercentChange24h) >= 0
+                    ? "text-green-500"
+                    : "text-red-500"
                 }`}
               >
                 {formatPercentage(coin.assetPercentChange24h)}
               </td>
-              <td className="text-slate-600 py-2 px-4 hidden md:table-cell">${formatPrice(coin.assetMarketCap)}</td>
+              <td className="text-slate-600 py-2 px-4 hidden md:table-cell">
+                ${formatPrice(coin.assetMarketCap)}
+              </td>
               <td className="py-2 px-2">
                 <button
                   className="bg-blue-400 text-white py-1 px-3 rounded-md md:py-2 md:px-4"

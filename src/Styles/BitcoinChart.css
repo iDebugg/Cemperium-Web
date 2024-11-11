@@ -3,26 +3,17 @@
     padding: 5px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   
-   
   }
   
   .chart-title {
     color: #696969;
-  
-  
   }
   .chart-title span {
     color: #9A9A9A;
-  
-  
   }
-
-  
   .current-price {
     text-align: left;
     font-family: montserrat;
-    /* font-weight: 700; */
     color: #519ACE;
   }
   .marketOverviewText{
@@ -30,7 +21,6 @@
     font-weight: 600;
     color: #9A9A9A;
   }
-  
   .time-frame-selector {
     margin-top: 10px;
  
@@ -77,9 +67,6 @@
   display: flex;
   
 }
-/* .bitcoinImgDspMobile{
-  display: none;
-} */
 .bitcoinImgDspLarge{
   display: flex;
 }

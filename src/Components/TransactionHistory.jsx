@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const TransactionHistory = ({ selectedType, selectedStatus }) => {
   const [transactions, setTransactions] = useState([]);
-
-  // Fetch transactions from the API
   const fetchTransactions = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_HISTORIES_API_URL}`);
+      const response = await axios.get(
+        `${process.env.REACT_APP_HISTORIES_API_URL}`
+      );
       setTransactions(response.data);
     } catch (error) {
-      console.error('Error fetching transactions:', error);
+      console.error("Error fetching transactions:", error);
     }
   };
 
@@ -19,15 +19,16 @@ const TransactionHistory = ({ selectedType, selectedStatus }) => {
 
     const interval = setInterval(() => {
       fetchTransactions();
-    }, 60000); // Update every minute
+    }, 60000);
 
     return () => clearInterval(interval);
   }, []);
-
-  // Filter transactions based on selected type and status
   const filteredTransactions = transactions.filter((transaction) => {
-    const typeMatch = selectedType === 'All' || transaction.type === selectedType;
-    const statusMatch = selectedStatus === 'All' || transaction.status.toLowerCase() === selectedStatus.toLowerCase();
+    const typeMatch =
+      selectedType === "All" || transaction.type === selectedType;
+    const statusMatch =
+      selectedStatus === "All" ||
+      transaction.status.toLowerCase() === selectedStatus.toLowerCase();
     return typeMatch && statusMatch;
   });
 
@@ -36,7 +37,7 @@ const TransactionHistory = ({ selectedType, selectedStatus }) => {
       <h2 className="text-left text-lg font-semibold mb-4">Activities</h2>
       <div className="overflow-auto flex-1">
         <table className="w-full table-auto border-collapse">
-          <thead className='sticky top-0'>
+          <thead className="sticky top-0">
             <tr className="bg-gray-100 text-gray-600 uppercase text-xs leading-normal">
               <th className="py-2 px-3 text-left">Type</th>
               <th className="py-2 px-3 text-left">Asset</th>
@@ -48,8 +49,7 @@ const TransactionHistory = ({ selectedType, selectedStatus }) => {
             </tr>
           </thead>
           <tbody>
-            
-            <tr  className="border-b border-gray-200 hover:bg-gray-50 text-xs">
+            <tr className="border-b border-gray-200 hover:bg-gray-50 text-xs">
               <td className="py-2 px-3">Withdrawal</td>
               <td className="py-2 px-3">BTC</td>
               <td className="py-2 px-3">0.1</td>
@@ -58,33 +58,24 @@ const TransactionHistory = ({ selectedType, selectedStatus }) => {
               <td className="py-2 px-3">12/20/2024</td>
               <td className="py-2 px-3">To 03bqvt83.22</td>
             </tr>
-         
-        </tbody>
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
+          </tbody>
 
           <tbody className="overflow-y-auto">
             {filteredTransactions.map((transaction, index) => (
-              <tr key={index} className="border-b border-gray-200 hover:bg-gray-50 text-xs">
+              <tr
+                key={index}
+                className="border-b border-gray-200 hover:bg-gray-50 text-xs"
+              >
                 <td className="py-2 px-3">{transaction.type}</td>
                 <td className="py-2 px-3">{transaction.asset}</td>
                 <td className="py-2 px-3">{transaction.amount}</td>
                 <td className="py-2 px-3">${transaction.usd}</td>
-                <td className={`py-2 px-3 ${transaction.status.toLowerCase()}`}>{transaction.status}</td>
-                <td className="py-2 px-3">{new Date(transaction.date).toLocaleString()}</td>
+                <td className={`py-2 px-3 ${transaction.status.toLowerCase()}`}>
+                  {transaction.status}
+                </td>
+                <td className="py-2 px-3">
+                  {new Date(transaction.date).toLocaleString()}
+                </td>
                 <td className="py-2 px-3">To {transaction.address}</td>
               </tr>
             ))}

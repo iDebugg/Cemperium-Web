@@ -45,19 +45,17 @@ const SignupForm = () => {
       const userData = { email, username, password, deviceToken };
       console.log(`======= user data ========`);
       console.log(userData);
-      
-  
+
       try {
         const res = await axios.post(
- `${process.env.REACT_APP_SIGNUP_API_URL}`,
-  userData
-);
+          `${process.env.REACT_APP_SIGNUP_API_URL}`,
+          userData
+        );
         console.log("====== response ======");
         console.log(res.data);
-  
+
         if (res.data.status === 200) {
           toast.success(res.data.message);
-          // Navigate after the toast
           setTimeout(() => navigate("/LogIn"), 500);
         } else {
           toast.error(res.data.message);
@@ -73,14 +71,13 @@ const SignupForm = () => {
         }
         resetForm();
       }
-  
+
       console.log(userData);
       setIsFormSubmitted(true);
     } else {
       alert("Please agree to the terms to create an account.");
     }
   };
-  
 
   return (
     <div>

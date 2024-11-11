@@ -13,13 +13,10 @@ import {
   updateBnbPrice,
   updateBnbPriceChange,
   updateBnbChartData
-} from '../Controller/assetscontroller/index';  // Import actions
+} from '../Controller/assetscontroller/index';
 
 const BnbPriceChart = () => {
-  // Redux dispatch
   const dispatch = useDispatch();
-
-  // Fetch BNB data from Redux store
   const price = useSelector((state) => state.cryptoAssetsController.bnbPrice);
   const priceChange = useSelector((state) => state.cryptoAssetsController.bnbPriceChange);
   const chartData = useSelector((state) => state.cryptoAssetsController.bnbChartData);
@@ -35,8 +32,6 @@ const BnbPriceChart = () => {
 
         const newPrice = data[data.length - 1];
         const lastPrice = data.length > 1 ? data[data.length - 2] : newPrice;
-
-        // Dispatch actions to update the Redux store
         dispatch(updateBnbPrice(newPrice));
         dispatch(updateBnbPriceChange(((newPrice - lastPrice) / lastPrice) * 100));
 
@@ -64,7 +59,7 @@ const BnbPriceChart = () => {
     const interval = setInterval(fetchPrice, 60000);
 
     return () => clearInterval(interval);
-  }, [dispatch]); // Include dispatch in the dependency array
+  }, [dispatch]); 
 
   return (
     <div className="bnb-price-chart display: flex flex-col items-center p-3">

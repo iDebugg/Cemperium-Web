@@ -13,8 +13,8 @@
 }
 
 .scroll-contnt {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: 10px;  /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: 10px; 
 }
   
   .filter-button {    

@@ -1,19 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
-import Sidebar from "../Components/Sidebar";
 import BnbPriceChart from "../Components/BnbPriceChart";
 import SolanaPriceChart from "../Components/SolanaPriceChart";
 import EthPriceChart from "../Components/EthPriceChart";
 import BitcoinChart from "../Components/BitcoinChart";
 import CryptocurrenciesList from "../Components/CryptocurrenciesList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-  faArrowRight,
-  faBars,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import WalletBalance from "../Components/WalletBalance";
 import CryptoAssets from "../Components/CryptoAssets";
 
@@ -21,8 +15,6 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-
-
 
   return (
     <>
@@ -34,12 +26,12 @@ const HomePage = () => {
           <EthPriceChart />
         </div>
         <BitcoinChart />
-        <CryptocurrenciesList handleIsLoading={(isloading)=>setLoading(isloading)} />
+        <CryptocurrenciesList
+          handleIsLoading={(isloading) => setLoading(isloading)}
+        />
       </div>
       <main className="pt-1 md:ml-64 hidden sm:hidden md:block">
-        {/* Your main content goes here */}
         <div className="p-2">
-          {/* <h1 className="text-3xl font-bold">Main Content</h1> */}
           <div className="hidden md:flex md:justify-between md:items-center bg-white shadow rounded-full px-4 py-2 mb-5">
             <div className="flex items-center bg-gray-100 rounded-lg px-4 py-2 flex-1 max-w-md">
               <FontAwesomeIcon icon={faSearch} className="text-gray-400 mr-2" />
@@ -75,8 +67,6 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          {/* <p>This is where your main content goes.</p> */}
-          {/* Add more content here as needed */}
         </div>
       </main>
     </>
