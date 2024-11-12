@@ -4,6 +4,10 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+  .charts-container {
+    padding: 5px;
+    border-radius: 10px;
+  }
   
   .chart-title {
     color: #696969;
@@ -15,6 +19,11 @@
     text-align: left;
     font-family: montserrat;
     color: #519ACE;
+  }
+  .currents-price {
+    text-align: left;
+    font-family: montserrat;
+    color: #ffff;
   }
   .marketOverviewText{
     font-family: montserrat;

@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import BitcoinChart from "./BitcoinChart";
+import BitcoinChartWalletPage from "./BitcoinChartWalletPage";
 
 const DashboardWalletBalance = () => {
   const balance = useSelector(
@@ -42,8 +42,8 @@ const DashboardWalletBalance = () => {
   };
 
   return (
-    <div className="wallet-balance-container display: flex pt-3 pb-3 pr-3 pl-3 mb-4 rounded-xl">
-      <div className="display: grid ">
+    <div className="wallet-balance-container flex justify-between gap-2 pt-3 pb-3 pr-3 pl-3 mb-4 rounded-xl">
+      <div className="display: grid flex-shrink-0 w-1/3">
         <div className="balance-header display: flex items-center justify-left mb-2">
           <span className="currentBalanceText text-lg sm:text-lg md:text-lg lg:text-xl xl:text-xl mr-2 text-white">
             Current Balance
@@ -116,7 +116,9 @@ const DashboardWalletBalance = () => {
         </div>
       </div>
 
-      {/* <BitcoinChart /> */}
+      <div className="flex-grow ml-4 bg-inherit"> {/* Give this div the remaining space */}
+    <BitcoinChartWalletPage />
+  </div>
     </div>
   );
 };
