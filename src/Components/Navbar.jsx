@@ -172,17 +172,22 @@ const Navbar = () => {
               >
                 <span className="text-2xl">Cryptocurrency</span>
               </Link>
-              <a
-                href="#settings"
-                className="text-slate-100 text-2xl hover:text-blue-500 hover:bg-white hover:p-2 hover:rounded-xl"
+              <Link
+                to=""
+                className={`flex items-center p-2 mb-4 ${
+                  isActive("/Settings")
+                    ? "bg-white text-blue-500 rounded-xl"
+                    : "text-white"
+                }`}
               >
-                Settings
-              </a>
+                <span className="text-2xl">Settings</span>
+              </Link>
+             
               <div className="flex-grow"></div>
               <Link onClick={handleLogout}>
                 <a
                   href="#logout"
-                  className="text-slate-100 text-2xl hover:text-red-700 mb-8"
+                  className="text-slate-100 text-2xl hover:text-red-700 p-2 mb-8"
                 >
                   Logout
                 </a>

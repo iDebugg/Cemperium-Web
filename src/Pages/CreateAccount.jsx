@@ -20,7 +20,7 @@ const CreateAccount = () => {
       </div>
 
       <div className="create-an-account text-center mt-10 pt-10 pb-5 pr-5 pl-5">
-        <h1 className="font-bold text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl">
+        <h1 className="font-bold text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl mb-2">
           Create an account
         </h1>
         <h5 className="text-l sm:text-l md:text-l lg:text-l l:text-l mb-5">
